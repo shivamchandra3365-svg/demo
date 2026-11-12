@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweet Dreams | Premium Cake Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="#home" class="logo">
+        Sweet<span>Dreams.</span>
+    </a>
+
+    <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#shop">Our Cakes</a>
+        <a href="#designer">Cake Designer</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+        <button id="themeBtn" aria-label="Toggle theme">☾</button>
+
+        <button class="cart-button" id="openCart">
+            🛒 <span id="cartCount">0</span>
+        </button>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <span class="eyebrow">HANDCRAFTED WITH LOVE</span>
+
+        <h1>Every Celebration<br>
+            Deserves a <span>Beautiful Cake.</span>
+        </h1>
+
+        <p>
+            Discover handcrafted cakes, artistic designs
+            and unforgettable flavours for your special moments.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#shop" class="btn primary">Explore Cakes →</a>
+            <a href="#designer" class="btn secondary">Create Your Cake</a>
+        </div>
+
+        <div class="hero-stats">
+            <div><strong>50+</strong><small>Cake Designs</small></div>
+            <div><strong>1000+</strong><small>Happy Customers</small></div>
+            <div><strong>100%</strong><small>Freshly Baked</small></div>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1000"
+            alt="Beautiful celebration cake">
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories section">
+
+    <div class="section-heading">
+        <span class="eyebrow">EXPLORE OUR WORLD</span>
+        <h2>Shop By Occasion</h2>
+    </div>
+
+    <div class="category-grid">
+        <button class="category-card" data-category="Birthday">
+            🎂 <span>Birthday</span>
+        </button>
+
+        <button class="category-card" data-category="Wedding">
+            💍 <span>Wedding</span>
+        </button>
+
+        <button class="category-card" data-category="Anniversary">
+            ❤️ <span>Anniversary</span>
+        </button>
+
+        <button class="category-card" data-category="Designer">
+            ✨ <span>Designer</span>
+        </button>
+
+        <button class="category-card" data-category="all">
+            🍰 <span>All Cakes</span>
+        </button>
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="shop section" id="shop">
+
+    <div class="section-heading">
+        <span class="eyebrow">OUR SIGNATURE COLLECTION</span>
+        <h2>Discover Our Cakes</h2>
+        <p>Made fresh. Designed beautifully. Delivered with love.</p>
+    </div>
+
+    <div class="shop-tools">
+
+        <input type="search" id="searchInput"
+               placeholder="Search your favourite cake...">
+
+        <select id="sortSelect">
+            <option value="default">Sort By: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+        </select>
+
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+</section>
+
+<!-- CUSTOM CAKE DESIGNER -->
+<section class="designer section" id="designer">
+
+    <div class="section-heading">
+        <span class="eyebrow">YOUR IDEA, OUR CREATIVITY</span>
+        <h2>Create Your Dream Cake</h2>
+        <p>Customize your cake according to your celebration.</p>
+    </div>
+
+    <div class="designer-container">
+
+        <div class="designer-preview">
+            <div class="cake-preview" id="cakePreview">
+                <div class="cake-decoration">🎂</div>
+                <h3 id="previewText">Happy Birthday!</h3>
+                <p id="previewFlavor">Chocolate</p>
+            </div>
+
+            <h3>Your Cake Preview</h3>
+            <p>Preview updates as you customize.</p>
+        </div>
+
+        <div class="designer-form">
+
+            <label for="designOccasion">Occasion</label>
+            <select id="designOccasion">
+                <option>Birthday</option>
+                <option>Wedding</option>
+                <option>Anniversary</option>
+                <option>Graduation</option>
+                <option>Other</option>
+            </select>
+
+            <label for="designFlavor">Cake Flavour</label>
+            <select id="designFlavor">
+                <option>Chocolate</option>
+                <option>Vanilla</option>
+                <option>Black Forest</option>
+                <option>Strawberry</option>
+                <option>Butterscotch</option>
+            </select>
+
+            <label for="designSize">Cake Size</label>
+            <select id="designSize">
+                <option value="699">0.5 KG - ₹699</option>
+                <option value="1099">1 KG - ₹1099</option>
+                <option value="1999">2 KG - ₹1999</option>
+                <option value="2999">3 KG - ₹2999</option>
+            </select>
+
+            <label for="designColor">Cake Theme Colour</label>
+            <select id="designColor">
+                <option value="#f4b6c2">Pink</option>
+                <option value="#8b5e3c">Chocolate</option>
+                <option value="#f4df9b">Golden</option>
+                <option value="#a9c8b3">Mint Green</option>
+                <option value="#b7a5dc">Lavender</option>
+            </select>
+
+            <label for="designMessage">Cake Message</label>
+            <input id="designMessage" maxlength="35"
+                   value="Happy Birthday!" placeholder="Enter message">
+
+            <h3>Estimated Price: ₹<span id="designPrice">699</span></h3>
+
+            <button class="btn primary full" id="addCustomCake">
+                Add Custom Cake to Cart
+            </button>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why section" id="about">
+
+    <div class="section-heading">
+        <span class="eyebrow">OUR PROMISE</span>
+        <h2>Why Choose Sweet Dreams?</h2>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div>🍰</div>
+            <h3>Fresh Ingredients</h3>
+            <p>Freshly prepared cakes using quality ingredients.</p>
+        </div>
+
+        <div class="feature-card">
+            <div>🎨</div>
+            <h3>Custom Designs</h3>
+            <p>Unique cake designs created for your celebrations.</p>
+        </div>
+
+        <div class="feature-card">
+            <div>🚚</div>
+            <h3>Careful Delivery</h3>
+            <p>Special care for your cake during delivery.</p>
+        </div>
+
+        <div class="feature-card">
+            <div>💝</div>
+            <h3>Made With Love</h3>
+            <p>Every cake is prepared with attention to detail.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+        <h2>Your Shopping Bag</h2>
+        <button id="closeCart">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="coupon">
+        <input id="couponInput" placeholder="Enter code SWEET10">
+        <button id="applyCoupon">Apply</button>
+    </div>
+
+    <p id="couponMessage"></p>
+
+    <div class="cart-summary">
+        <p>Subtotal: <strong id="subtotal">₹0</strong></p>
+        <p>Discount: <strong id="discount">₹0</strong></p>
+        <h3>Total: <span id="grandTotal">₹0</span></h3>
+
+        <button class="btn primary full" id="checkoutBtn">
+            Proceed to Checkout
+        </button>
+    </div>
+
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="closeCheckout">✕</button>
+
+        <h2>Complete Your Order</h2>
+        <p>Enter your details to prepare your order.</p>
+
+        <form id="checkoutForm">
+
+            <input type="text" id="buyerName"
+                   placeholder="Full Name" required>
+
+            <input type="tel" id="buyerPhone"
+                   placeholder="10 Digit Mobile Number"
+                   pattern="[0-9]{10}" required>
+
+            <input type="text" id="buyerAddress"
+                   placeholder="Delivery Address" required>
+
+            <input type="date" id="buyerDate" required>
+
+            <textarea id="buyerNote"
+                      placeholder="Special instructions"></textarea>
+
+            <button class="btn primary full" type="submit">
+                Prepare My Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ORDER TRACKING -->
+<section class="tracking section">
+
+    <div class="section-heading">
+        <span class="eyebrow">YOUR CELEBRATION JOURNEY</span>
+        <h2>Track Your Order</h2>
+        <p>Check the latest status of your demo orders.</p>
+    </div>
+
+    <div class="tracking-box">
+        <input id="trackingInput"
+               placeholder="Enter your Order ID">
+
+        <button class="btn primary" id="trackBtn">Track</button>
+
+        <div id="trackingResult"></div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Sweet Dreams.</h2>
+            <p>Turning your sweetest moments into memories.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#shop">Our Cakes</a>
+            <a href="#designer">Cake Designer</a>
+        </div>
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>Phone: +91 9876543210</p>
+            <p>Email: hello@sweetdreams.com</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Sweet Dreams Bakery. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
